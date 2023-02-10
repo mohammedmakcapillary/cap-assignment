@@ -35,20 +35,12 @@ module.exports = {
   moduleNameMapper: {
     '^components(.*)$': '<rootDir>/app/components/$1',
     '^utils(.*)$': '<rootDir>/app/utils/$1',
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/testing/assetsTransformer.js", "\\.(css|less|scss)$": "<rootDir>/internals/testing/assetsTransformer.js",
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/internals/testing/assetsTransformer.js',
+    '\\.(css|less|scss)$': '<rootDir>/internals/testing/assetsTransformer.js',
   },
-  coverageReporters: [
-    'lcov',
-    'json',
-    'text',
-    'text-summary'
-  ],
+  coverageReporters: ['lcov', 'json', 'text', 'text-summary'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  transformIgnorePatterns: [
-    "node_modules/(?!(@capillarytech" + ")/)",
-  ],
-  coveragePathIgnorePatterns: [
-    '.tests.integration.',
-    /mockdata/i,
-  ],
+  transformIgnorePatterns: ['node_modules/(?!(@capillarytech' + ')/)'],
+  coveragePathIgnorePatterns: ['.tests.integration.', 'mock'],
 };

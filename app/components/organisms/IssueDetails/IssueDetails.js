@@ -27,7 +27,7 @@ const IssueDetails = ({ issues }) => {
     [issues, issueId],
   );
 
-  if (!!issueData) {
+  if (issueData) {
     const { title, state, body } = issueData;
 
     return (

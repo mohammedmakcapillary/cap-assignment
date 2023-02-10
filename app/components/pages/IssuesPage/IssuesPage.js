@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import CapTable from '@capillarytech/cap-ui-library/CapTable';
-import useQuery from '../../../lib/CustomHooks/useQuery';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import useQuery from '../../../lib/CustomHooks/useQuery';
 import saga from './saga';
 import reducer from './reducer';
 import * as actions from './actions';
@@ -77,11 +77,9 @@ const IssuesPage = ({ actions, issues }) => {
         onChange: handlePagination,
         current: currentPage,
       }}
-      onRow={record => {
-        return {
-          onClick: () => handleRowClick(record),
-        };
-      }}
+      onRow={record => ({
+        onClick: () => handleRowClick(record),
+      })}
     />
   );
 };
