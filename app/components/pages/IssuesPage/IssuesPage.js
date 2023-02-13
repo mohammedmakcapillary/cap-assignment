@@ -119,11 +119,11 @@ export const columns = [
     dataIndex: 'state',
   },
   {
-    title: 'Create At',
+    title: 'Created At',
     dataIndex: 'created_at',
   },
   {
-    title: 'Create By',
+    title: 'Created By',
     dataIndex: 'created_by',
   },
 ];
