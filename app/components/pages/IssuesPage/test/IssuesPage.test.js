@@ -11,9 +11,12 @@ describe('Issues List Page', () => {
   });
 
   it('renders 3 issues', () => {
-    render(<IssuesPage issues={issuesList} />);
+    const actions = {
+      loadIssues: jest.fn(),
+    };
+    render(<IssuesPage issues={issuesList} actions={actions} />);
     const issueListingTableRow = screen.getAllByRole('row');
-    expect(issueListingTableRow).toHaveLength();
+    expect(issueListingTableRow).toHaveLength(3);
   });
 
   it('renders header correctly', () => {
@@ -42,5 +45,14 @@ describe('Issues List Page', () => {
       name: /created by/i,
     });
     expect(createdByCol).toBeInTheDocument();
+  });
+
+  it('renders pagination list', () => {
+    const actions = {
+      loadIssues: jest.fn(),
+    };
+    render(<IssuesPage issues={issuesList} actions={actions} />);
+    const paginationListMenu = screen.getByRole('list');
+    expect(paginationListMenu).toBeInTheDocument();
   });
 });
